@@ -1,13 +1,13 @@
-import java.io.IOException;
+package LinkedLists;
+
 import java.util.Scanner;
-import java.lang.*;
 
 public class LinkedList{
 
-    static Scanner sc = new Scanner(System.in);
+    public static Scanner sc = new Scanner(System.in);
     Node head;
 
-    static class Node{
+    public static class Node{
         int data;
         Node next;
         Node(int value){
@@ -15,7 +15,7 @@ public class LinkedList{
         }
     }
 
-    public static void insertAtBegin(LinkedList list){
+    private static void insertAtBegin(LinkedList list){
         System.out.println("Enter a value to be inserted: ");
         Node insertNode = new Node(sc.nextInt());
 
@@ -41,7 +41,7 @@ public class LinkedList{
         traveller.next = currentNode;
     }
 
-    public static void insertAfterNode(LinkedList list){
+    private static void insertAfterNode(LinkedList list){
         System.out.println("Enter the value to be inserted");
         Node currentNode = new Node(sc.nextInt());
         System.out.println("Enter the node value after which the node should be inserted: ");
@@ -58,13 +58,13 @@ public class LinkedList{
         traveller.next = currentNode;
     }
 
-    public static void delFirstNode(LinkedList list){
+    private static void delFirstNode(LinkedList list){
         Node traverse = list.head.next;
         list.head = traverse;
         System.out.println("Deletion of first Node is complete");
     }
 
-    public static void delLastNode(LinkedList list){
+    private static void delLastNode(LinkedList list){
         Node traverse = list.head;
         while(traverse.next.next != null){
             traverse = traverse.next;
@@ -73,7 +73,7 @@ public class LinkedList{
         System.out.println("Deletion of the last node complete");
     }
 
-    public static void delParticularNode(LinkedList list){
+    private static void delParticularNode(LinkedList list){
         System.out.println("Enter the value you want to delete ");
         int val = sc.nextInt();
         Node traverse = list.head;
@@ -93,14 +93,14 @@ public class LinkedList{
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         int choice = 0;
         String c = "n";
         LinkedList list = new LinkedList();
         System.out.println("Your choice is: "+choice);
         do{
             System.out.println("1. Insert in the beginning of the list");
-            System.out.println("2. Insert in the end of the list1");
+            System.out.println("2. Insert in the end of the list");
             System.out.println("3. Insert after a particular node in the list");
             System.out.println("4. Delete the first node");
             System.out.println("5. Delete the last node");
